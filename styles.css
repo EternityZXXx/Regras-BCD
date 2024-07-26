@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --green-color: #27b222;
+    --red-color: #b22222;
+    --main-color: #74A8B2;
+    --scrollbar-bg: #e0e0e0;
+    --scrollbar-thumb: #888;
+    --scrollbar-thumb-hover: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html { 
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    background-color: #01090c;
+    color: #ffffff;
+    line-height: 1.6rem;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff10;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff1e;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+}
+
+header {
+    background-color: #01090c;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--main-color);
+}
+
+header h1 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header img {
+    margin-left: 100px;
+    width: 70px;
+    height: 70px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav {
+    text-align: center;
+    margin-right: 100px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item>a {
+    padding: 10px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #f3f3f305;
+    color: #ffffff5b;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.nav-item>a:hover {
+    background-color: var(--main-color);
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.98);
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    margin: 0;
+    margin-top: 3px;
+    list-style: none;
+    min-width: 200px;
+    max-height: 353px;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    display: none;
+    width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #ffffff05;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+    background-color: var(--main-color);
+}
+
+.dropdown-menu a {
+    transition: all 0.3s ease;
+    color: #ffffff69;
+    text-decoration: none;
+    padding: 0.55rem 1rem;
+    display: block;
+}
+
+.dropdown-menu a:hover, 
+.dropdown-menu a.active {
+    color: #ffffff;
+    background-color: var(--main-color);
+}
+
+#scrollToTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff0e;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    color: #ffffff80;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollToTop:hover {
+    color: #ffffff;
+    background-color: var(--main-color);
+}
+
+#scrollToTop:focus {
+    outline: none;
+}
+
+#scrollToTop:active {
+    transform: scale(0.8);
+}
+
+p strong {
+    font-weight: 600;
+}
+
+.rules {
+    max-width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff02;
+    color: #ffffffa8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: default;
+}
+
+#red-areas,
+#green-areas {
+    margin-top: 20px;
+}
+
+#red-areas h2 {
+    color: var(--red-color);
+    border-bottom: 2px solid var(--red-color);
+}
+
+#green-areas h2 {
+    color: var(--green-color);
+    border-bottom: 2px solid var(--green-color);
+}
+
+h1 {
+    color: var(--main-color);
+    font-size: 1rem;
+}
+
+h2 {
+    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h3 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer {
+    border-top: 1px solid var(--main-color);
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffffff05;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 16px;
+    color: var(--main-color);
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer img {
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+footer img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        border-radius: 10px;
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #1a1a1a10;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #0e0e0e1e;
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--main-color);
+    }
+
+    header h1 {
+        font-size: 1rem;
+        margin-left: 30px;
+    }
+
+    .rules {
+        padding: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .nav-list {
+        text-align: center;
+        display: block;
+    }
+
+    .nav-item {
+        display: block;
+        margin-right: 0;
+    }
+
+    .dropdown-menu {
+        background-color: #111111f3;
+        width: 100%;
+    }
+
+    .nav-item>a {
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+    }
+
+    header h1 {
+        margin-left: 0;
+        margin-right: 30px;
+        font-size: 1rem;
+    }
+
+    header img {
+        margin: 0;
+    }
+
+    nav {
+        margin-right: 0;
+    }
+
+    .nav-list {
+        text-align: center;
+    }
+
+    .nav-item {
+        display: block;
+    }
+
+    .dropdown-menu {
+        background-color: #111111f3;
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        left: -120px;
+    }
+
+    .nav-item>a {
+        width: auto;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    ::-webkit-scrollbar {
+        border-radius: 10px;
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #ffffff10;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #ffffff1e;
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--main-color);
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .rules {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    footer {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        line-height: 1.2rem;
+    }
+}
